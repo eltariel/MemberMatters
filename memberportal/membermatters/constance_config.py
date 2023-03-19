@@ -216,6 +216,18 @@ CONSTANCE_CONFIG = {
         "https://discordapp.com/api/webhooks/<token>",
         "Discord URL to send webhook notifications to.",
     ),
+    "ENABLE_SLACK_INTEGRATION": (
+        False,
+        "Enable slack integration",
+    ),
+    "SLACK_DOOR_WEBHOOK": (
+        "https://hooks.slack.com/services/<secret>",
+        "Slack URL to send webhook notifications to.",
+    ),
+    "SLACK_INTERLOCK_WEBHOOK": (
+        "https://hooks.slack.com/services/<secret>",
+        "Slack URL to send webhook notifications to.",
+    ),
     "ENABLE_DISCOURSE_SSO_PROTOCOL": (
         False,
         "Enable support for the discourse SSO protocol.",
@@ -347,6 +359,7 @@ CONSTANCE_CONFIG_FIELDSETS = OrderedDict(
                 "ENABLE_MEMBERBUCKS",
                 "ENABLE_DISCOURSE_SSO_PROTOCOL",
                 "ENABLE_DISCORD_INTEGRATION",
+                "ENABLE_SLACK_INTEGRATION",
                 "ENABLE_SPACE_DIRECTORY",
                 "ENABLE_THEME_SWIPE",
                 "ENABLE_PORTAL_SITE_SIGN_IN",
@@ -478,6 +491,13 @@ CONSTANCE_CONFIG_FIELDSETS = OrderedDict(
             (
                 "DISCORD_DOOR_WEBHOOK",
                 "DISCORD_INTERLOCK_WEBHOOK",
+            ),
+        ),
+        (
+            "Slack Integration",
+            (
+                "SLACK_DOOR_WEBHOOK",
+                "SLACK_INTERLOCK_WEBHOOK",
             ),
         ),
     ]
